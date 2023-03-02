@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Roboto&family=Shantell+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_piano.css">
+    
+</head>
+
+<body>
+    <div class="w-[800px] h-[400px] bg-[#8B9A46] drop-shadow-[12px_13px_3px_#1A1A18] mx-auto mt-40 rounded-xl">
+      <div class="flex justify-between w-full">
+        <p class="text-white font-Shantell_Sans text-3xl font-bold ml-5 mt-5">Playable Piano</p>
+        <div class=" mt-7">
+          <label for="volume-slider" class="text-white text-xl font-Shantell_Sans mr-3">Volume</label>
+          <input type="range" min="0" max="1" value="0.5" step="0.025" id="volume-slider">
+        </div>
+        <div class="mt-7 mr-7 relative w-36">
+          <span class="text-white absolute top-0.5 font-Shantell_Sans">Show Keys</span>
+          <label class="relative inline-flex items-center cursor-pointer float-right">            
+            <input type="checkbox" checked id="toggle-show-key" class="sr-only peer">                
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>            
+          </label>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute flex left-[98px]">
+          <div class="tuts-piano-hitam z-10">W</div>
+          <div class="tuts-piano-hitam z-10 ml-[24px]">E</div>
+          <div class="tuts-piano-hitam z-10 ml-[88px]">T</div>
+          <div class="tuts-piano-hitam z-10 ml-[23px]">Y</div>
+          <div class="tuts-piano-hitam z-10 ml-[19px]">U</div>
+          <div class="tuts-piano-hitam z-10 ml-[90px]">O</div>
+          <div class="tuts-piano-hitam z-10 ml-[21px]">P</div>
+        </div>
+        <div class="grid-cols-10 grid mt-10 gap-0.5 mx-14">
+          <div class="tuts-piano-putih">A</div>
+          <div class="tuts-piano-putih">S</div>
+          <div class="tuts-piano-putih">D</div>
+          <div class="tuts-piano-putih">F</div>
+          <div class="tuts-piano-putih">G</div>
+          <div class="tuts-piano-putih">H</div>
+          <div class="tuts-piano-putih">J</div>
+          <div class="tuts-piano-putih">K</div>
+          <div class="tuts-piano-putih">L</div>
+          <div class="tuts-piano-putih">;</div>
+        </div>      
+      </div>
+      </div>
+</body>
+<script src="piano.js"></script>
+</html>

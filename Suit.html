@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suit Jepang Asik</title>
+    <script src="https://kit.fontawesome.com/d454dfd021.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            text-align: center;
+            font-family: sans-serif;
+            
+        }
+        h1{
+            font-size: 40px;
+            margin: 0;
+            margin-top: 20px;   
+            text-shadow: 1px 1px 2px rgb(130, 130, 131) ;
+        }   
+        h2{
+            text-shadow: 1px 1px 2px rgb(130, 130, 131) ;
+            margin-bottom: 0;
+        }
+        ul{
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 0;
+        }
+        li{
+            background-color: #F4F4F6;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 30px rgb(233, 232, 232);
+            cursor: pointer;
+            transition: all 0.5s;
+            border: 2px solid rgb(231, 228, 228);
+        }
+        li:hover{
+            transform: scale(1.1);
+            box-shadow: 5px 5px 30px rgb(233, 232, 232);
+        }
+        .border-pilih{
+            border: 2px solid rgb(123, 247, 7);
+        }
+        li img{
+            width: 50px;
+        }
+        li i{
+            font-size: 50px;
+        }
+        .garis{
+            position: absolute;
+            top: 370px;
+            margin: 0 auto;
+            height: 350px;
+            width: 2px;
+            background-color: rgb(233, 232, 232);
+        }
+        .bungkus{
+            position: absolute;
+            top: 410px;
+            display: flex;
+            justify-content: center;
+        }
+        .big-card{
+            padding: 10px;
+            background-color: #F4F4F6;
+            box-shadow: 5px 5px 30px rgb(233, 232, 232);
+            border: 2px solid rgb(231, 228, 228);
+            margin: 0 100px;
+            border-radius: 10px;
+        }
+        .big-card img{
+            width: 200px;
+        }
+        .big-card i{
+            font-size: 200px;
+        }
+        .lawan{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            top: 340px;
+        }
+        .lawan img{
+            width: 40px;
+            margin: 0 190px;
+        }
+        .lawan i{
+            font-size: 40px;
+            margin: 0 190px;
+        }
+        button{
+            padding: 10px 20px;
+            background-color: rgb(241, 87, 87);
+            color: white;
+            font-weight: bold;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+        .container{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        .menang{
+            transform: scale(1.1);
+            border: 2px solid rgb(123, 247, 7);
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Selamat Datang Di Suit Jepang Asik</h1>
+    <h1>Silakan Bersuit Ria</h1>
+    <h2>Pilih :</h2>
+    <ul>
+        <li class="batu"><i class="fa-solid fa-hand-back-fist"></i></li>
+        <li class="kertas"><i class="fa-solid fa-hand"></i></li>
+        <li class="gunting"><i class="fa-solid fa-hand-scissors"></i></li>
+    </ul>
+    <button>Suit Ulang</button>
+
+    <div class="container">
+        <div class="garis"></div>
+        <div class="lawan">
+            <div><i class="fa-solid fa-user-secret"></i></div>
+            <div><i class="fa-solid fa-computer"></i></div>
+        </div>
+        <div class="bungkus">
+            <!-- <div class="big-card"><img src="fa-solid fa-hand-back-fist"></div>
+            <div class="big-card"><img src="Gunting.PNG"></div> -->
+        </div>
+    </div>
+    <!-- <div>
+        <i class="fa-solid fa-user-cowboy"></i>
+    </div> -->
+    
+
+
+<script>
+    let acak
+    const bungkus = document.querySelector('.bungkus')
+    const li = document.getElementsByTagName('li')
+    const button = document.querySelector('button')
+
+    const div = document.createElement('div')
+    const div2 = document.createElement('div')
+    const i = document.createElement('i')
+    const i2 = document.createElement('i')
+
+    function getPilihanComputer(){
+        const comp = Math.random()
+
+        if(comp < 0.34) return 'kertas'
+        if(comp >= 0.34 && comp < 0.67) return 'batu'
+        return 'gunting'
+    }
+
+    function getHasil(comp, player){
+        if(player == comp) return 'SERI'
+        if(player == 'kertas') return (comp == 'batu') ? 'MENANG!' : 'KALAH!'
+        if(player == 'gunting') return (comp == 'batu') ? 'KALAH!' : 'MENANG!'
+        if(player == 'batu') return (comp == 'kertas') ? 'KALAH!' : 'MENANG!'
+    }
+
+    const pilihan = document.querySelectorAll('ul li')
+    pilihan.forEach(function(pil){
+        pil.addEventListener('click',function(){
+            
+        })
+    })
+
+    button.onclick = function(){
+        location.reload()
+    }
+    acak = Math.random()
+    li[0].onclick = function(){
+        li[1].style.display = 'none'
+        li[2].style.display = 'none'
+        
+        li[0].classList.toggle('border-pilih')
+        i.setAttribute('class','fa-solid fa-hand-back-fist')
+        div.append(i)
+        div.setAttribute('class','big-card')
+        bungkus.append(div)
+        
+        if(acak <= 0.34){
+            i2.setAttribute('class','fa-solid fa-hand-back-fist')
+            div2.append(i2)
+            div2.setAttribute('class','big-card')
+            bungkus.append(div2)
+            div.classList.add('menang')
+            div2.classList.add('menang')
+        }else if(acak > 0.34 && acak <= 0.68){
+            i2.setAttribute('class','fa-solid fa-hand-scissors')
+            div2.append(i2)
+            div2.setAttribute('class','big-card')
+            bungkus.append(div2)
+            div.classList.add('menang')
+        }else{
+            i2.setAttribute('class','fa-solid fa-hand')
+            div2.append(i2)
+            div2.setAttribute('class','big-card')
+            bungkus.append(div2)
+            div2.classList.add('menang')
+        }
+    }
+    li[1].onclick = function(){
+        li[0].style.display = 'none'
+        li[2].style.display = 'none'
+
+        li[1].classList.toggle('border-pilih')
+        i.setAttribute('class','fa-solid fa-hand')
+        div.append(i)
+        div.setAttribute('class','big-card')
+        bungkus.append(div)
+        
+        if(acak <= 0.34){
+            i2.setAttribute('class','fa-solid fa-hand-back-fist')
+            div2.append(i2)
+            div2.setAttribute('class','big-card')
+            bungkus.append(div2)
+            div.classList.add('menang')
+        }else if(acak > 0.34 && acak <= 0.68){
+            i2.setAttribute('class','fa-solid fa-hand-scissors')
+            div2.append(i2)
+            div2.setAttribute('class','big-card')
+            bungkus.append(div2)
+            div2.classList.add('menang')
+        }else{
+            i2.setAttribute('class','fa-solid fa-hand')
+            div2.append(i2)
+            div2.setAttribute('class','big-card')
+            bungkus.append(div2)
+            div2.classList.add('menang')
+            div.classList.add('menang')
+        }
+    }
+    li[2].onclick = function(){
+        li[1].style.display = 'none'
+        li[0].style.display = 'none'
+
+        li[2].classList.toggle('border-pilih')
+        i.setAttribute('class','fa-solid fa-hand-scissors')
+        div.append(i)
+        div.setAttribute('class','big-card')
+        bungkus.append(div)
+        
+        if(acak <= 0.34){
+            i2.setAttribute('class','fa-solid fa-hand-back-fist')
+            div2.append(i2)
+            div2.setAttribute('class','big-card')
+            bungkus.append(div2)
+            div2.classList.add('menang')
+        }else if(acak > 0.34 && acak <= 0.68){
+            i2.setAttribute('class','fa-solid fa-hand-scissors')
+            div2.append(i2)
+            div2.setAttribute('class','big-card')
+            bungkus.append(div2)
+            div.classList.add('menang')
+            div2.classList.add('menang')
+        }else{
+            i2.setAttribute('class','fa-solid fa-hand')
+            div2.append(i2)
+            div2.setAttribute('class','big-card')
+            bungkus.append(div2)
+            div.classList.add('menang')
+        }
+    }
+
+    li.addEventListener('click',function(){
+        li.classList.toggle = 'border-pilih'
+    })
+    li[1].onclick = function(){
+        li[1].classList.toggle = 'border-pilih'
+    }
+    li[2].onclick = function(){
+        li[2].classList.toggle = 'border-pilih'
+    }
+    
+</script>
+</body>
+</html>
